@@ -11,6 +11,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #ff6f61;    /* Accent (buttons, highlights) */
+  --color-secondary: #ff8a3d;  /* Secondary accent */
+  --color-dark: #1b2a41;       /* Main background/nav */
+  --color-accent: #ffe07a;     /* Highlights, hover */
+  --color-light: #f9f9f9;      /* Text, backgrounds */
+  --color-bg: var(--color-dark);   /* Main background */
+  --color-muted:rgba(249, 249, 249, 0.6);  /* Muted */
+  --color-text: var(--color-light); /* Main text */
+
+   --nav-width: 180px
 }
 
 a {
@@ -24,8 +35,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
