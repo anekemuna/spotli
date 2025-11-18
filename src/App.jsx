@@ -12,6 +12,7 @@ import CreatePostPage from "./pages/CreatePostPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -24,7 +25,14 @@ function App() {
         </Route>
 
         {/* App Routes */}
-        <Route path="/" element={<MainLayout />}>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <MainLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<HomePage />} />
           <Route path="/create" element={<CreatePostPage />} />
           <Route path="*" element={<NotFoundPage />} />
