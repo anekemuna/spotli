@@ -12,25 +12,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --color-primary: #ff6f61;    /* Accent (buttons, highlights) */
-  --color-secondary: #ff8a3d;  /* Secondary accent */
-  --color-dark: #1b2a41;       /* Main background/nav */
-  --color-accent: #ffe07a;     /* Highlights, hover */
-  --color-light: #f9f9f9;      /* Text, backgrounds */
-  --color-bg: var(--color-dark);   /* Main background */
-  --color-muted:rgba(249, 249, 249, 0.6);  /* Muted */
-  --color-text: var(--color-light); /* Main text */
+  /* Dark mode colors (default) */
+  --color-primary: #f59e0b; /* Amber - primary accent */
+  --color-secondary: #ef4444; /* Red - secondary accent */
+  --color-dark: #1f2937; /* Gray - dark elements */
+  --color-accent: #fbbf24; /* Light amber - highlights */
+  --color-light: #f9fafb; /* Off-white - light elements */
+  --color-bg: #111827; /* Dark gray - main background */
+  --color-bg-sidebar: #1f2937; /* Slightly lighter for sidebar */
+  --color-bg-elevated: #1f2937; /* Elevated elements (navbar, cards) */
+  --color-muted: rgba(249, 250, 251, 0.6); /* Muted white */
+  --color-text: var(--color-light); /* Main text color */
 
-   --sidebar-width: 180px
+  --sidebar-width: 180px;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-primary);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-accent);
 }
 
 body {
@@ -51,12 +54,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-bg-elevated);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--color-primary);
 }
 button:focus,
 button:focus-visible {
@@ -65,13 +68,25 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Light mode colors */
+    --color-primary: #f59e0b; /* Amber stays the same */
+    --color-secondary: #ef4444; /* Red stays the same */
+    --color-dark: #f9fafb; /* Light gray for backgrounds */
+    --color-accent: #d97706; /* Darker amber for contrast */
+    --color-light: #1f2937; /* Dark gray for text */
+    --color-bg: #f3f4f6; /* Light gray background */
+    --color-bg-sidebar: #f9fafb; /* Slightly darker for sidebar */
+    --color-bg-elevated: #ffffff; /* White for elevated elements */
+    --color-muted: rgba(31, 41, 55, 0.5); /* Muted dark */
+    --color-text: #1f2937; /* Dark text */
+
+    color: #1f2937;
+    background-color: #f3f4f6;
   }
   a:hover {
-    color: #747bff;
+    color: #f59e0b;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f9fafb;
   }
 }
