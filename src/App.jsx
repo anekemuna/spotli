@@ -11,24 +11,26 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreatePostPage from "./pages/CreatePostPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <Routes>
+    <AuthProvider>
+      <Routes>
+        {/* Authrization Routes */}
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+        </Route>
 
-      {/* Authrization Routes */}
-      <Route element={<AuthLayout />}>
-      <Route path="/login" element={<LoginPage />}/>
-      <Route path="/signup" element={<SignUpPage />}/>
-      </Route>
-
-      {/* App Routes */}
-      <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/create" element={<CreatePostPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
+        {/* App Routes */}
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/create" element={<CreatePostPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   );
 }
 
