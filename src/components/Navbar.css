@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1rem;
   background-color: var(--color-bg-elevated);
   border-bottom: none;
@@ -14,8 +14,8 @@
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-muted);
   border-radius: 20px;
-  flex: 1;
-  max-width: 500px;
+  flex: 2;
+  max-width: 600px;
   background-color: transparent;
 }
 
@@ -56,4 +56,54 @@
 
 .clear-button:hover {
   color: var(--color-primary);
+}
+
+/* Filter and Sort containers */
+.filter-container,
+.sort-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-container label,
+.sort-container label {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.filter-select,
+.sort-select {
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3e%3cpath fill='%23f9fafb' d='M6 9L1 4h10z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  transition: border-color 0.2s;
+}
+
+.filter-select:hover,
+.sort-select:hover {
+  border-color: var(--color-primary);
+}
+
+.filter-select:focus,
+.sort-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Dropdown options styling */
+.filter-select option,
+.sort-select option {
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text);
 }
