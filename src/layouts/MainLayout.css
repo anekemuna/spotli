@@ -6,6 +6,6 @@
 
 /* Main content area - offset by sidebar width */
 .main-layout > *:not(.sidebar) {
-  margin-left: calc(var(--sidebar-width) + 35px);
+  margin-left: calc(var(--sidebar-width) + 30px);
   flex: 1;
 }
