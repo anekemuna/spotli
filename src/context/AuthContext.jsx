@@ -3,6 +3,7 @@ import { supabase } from "../services/supabaseClient";
 
 const AuthContext = createContext({});
 
+// eslint-disable-next-line
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
