@@ -1,4 +1,4 @@
-.navbar {
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,10 +9,10 @@
   flex-direction: column;
   gap: 2rem;
   min-height: 100vh;
-  width: var(--nav-width);
+  width: var(--sidebar-width);
 }
 
-.navbar-title h2 {
+.sidebar-title h2 {
   color: var(--color-primary);
   margin: 0;
   font-size: 1.8rem;

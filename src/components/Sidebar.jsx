@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import "./Sidebar.css";
 
-const Navbar = () => {
+const Sidebar = () => {
   return (
-    <div className="navbar">
-      <div className="navbar-title">
+    <div className="sidebar">
+      <div className="sidebar-title">
         <h2>Spotli</h2>
       </div>
       <nav>
@@ -48,4 +48,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Sidebar;

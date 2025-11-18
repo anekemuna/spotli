@@ -21,7 +21,7 @@
   --color-muted:rgba(249, 249, 249, 0.6);  /* Muted */
   --color-text: var(--color-light); /* Main text */
 
-   --nav-width: 180px
+   --sidebar-width: 180px
 }
 
 a {
