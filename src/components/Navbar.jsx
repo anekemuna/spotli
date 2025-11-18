@@ -15,7 +15,7 @@ const Navbar = () => {
         <i>🔎</i>
         <input
           type="text"
-          placeholder="Search by title, username or flags..."
+          placeholder="Search by title..."
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
