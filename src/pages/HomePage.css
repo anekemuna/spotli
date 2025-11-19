@@ -1,0 +1,39 @@
+/* Home Page */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.posts-container {
+  flex: 1;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.posts-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.loading-message,
+.error-message,
+.no-posts-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: var(--color-secondary);
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 8px;
+}
+
+.no-posts-message {
+  color: var(--color-muted);
+}
