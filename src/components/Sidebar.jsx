@@ -35,6 +35,14 @@ const Sidebar = () => {
             <li>Create</li>
           </NavLink>
           <NavLink
+            to="/my-posts"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            <li>My Posts</li>
+          </NavLink>
+          <NavLink
             to="/settings"
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
