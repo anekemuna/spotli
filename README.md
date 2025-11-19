@@ -4,14 +4,14 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Find friends for your next hangout with Spotli. A social meet-up web app built with React + Vite that lets users discover local events, connect with people with similar interests, and share photos or updates from the events they attend**
 
-Time spent: **19** hours spent in total
+Time spent: **20** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 
-- [ ] **Web app includes a create form that allows the user to create posts**
+- [x] **Web app includes a create form that allows the user to create posts**
   - Form requires users to add a post title
   - Forms should have the *option* for users to add: 
     - additional textual content
@@ -23,7 +23,7 @@ The following **required** functionality is completed:
     - title 
     - upvotes count
   - Clicking on a post should direct the user to a new page for the selected post
-- [ ] **Users can view posts in different ways**
+- [x] **Users can view posts in different ways**
   - Users can sort posts by either:
     -  creation time
     -  upvotes count
@@ -45,7 +45,7 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 
-- [ ] Web app implements pseudo-authentication
+- [x] Web app implements pseudo-authentication
   - Users can only edit and delete posts or delete comments by entering the secret key, which is set by the user during post creation
   - **or** upon launching the web app, the user is assigned a random user ID. It will be associated with all posts and comments that they make and displayed on them
   - For both options, only the original user author of a post can update or delete it
@@ -63,7 +63,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [x] Enabled RLS policies, and used Supabase Authentication Features.
 
 ## Video Walkthrough
 
@@ -81,8 +81,9 @@ GIF created with ...
 ## Notes
 
 Describe any challenges encountered while building the app.
-- Coming up with a name. 
-- Mapping out the user journey. 
+- Initially starting was hard. Coming up with an idea, deciding a name, mapping out the user journey, and choosing colors.
+- The next challenge was deciding my database schema, including the columns to include, the foreign keys, and constraints.
+- I also struggled with RLS policy for my profiles table. I was trying setup my authentication process so that when a user signs up, a username and user id is added to the profiles table. I put the insert command in the sign up function, but that violated RLS policy. After several back and forths, I realzed I needed to make a trigger function on Supbase.
 
 ## License
 
