@@ -104,3 +104,11 @@
   background-color: rgba(239, 68, 68, 0.1);
   border-radius: 6px;
 }
+
+/* Field-level error */
+.post-form .field-error {
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}

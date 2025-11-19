@@ -13,9 +13,18 @@ const PostForm = ({
   const [imageUrl, setImageUrl] = useState(initialData.image_url || "");
   const [videoUrl, setVideoUrl] = useState(initialData.video_url || "");
   const [selectedFlags, setSelectedFlags] = useState(initialData.flags || []);
+  const [flagError, setFlagError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validate at least one flag is selected
+    if (selectedFlags.length === 0) {
+      setFlagError("Please select at least one event type");
+      return;
+    }
+    
+    setFlagError("");
     onSubmit({
       title,
       content,
@@ -29,6 +38,7 @@ const PostForm = ({
     setSelectedFlags((prev) =>
       prev.includes(flag) ? prev.filter((f) => f !== flag) : [...prev, flag]
     );
+    setFlagError("");
   };
 
   return (
@@ -84,7 +94,7 @@ const PostForm = ({
         </div>
 
         <div className="form-group">
-          <label>Flags</label>
+          <label>Flags </label>
           <div className="flags-container">
             <label>
               <input
@@ -116,9 +126,10 @@ const PostForm = ({
               🎉 Social
             </label>
           </div>
+          {flagError && <span className="field-error">{flagError}</span>}
         </div>
 
-        <button type="submit" disabled={loading || !title}>
+        <button type="submit" disabled={loading || !title || selectedFlags.length === 0}>
           {loading ? "Submitting..." : submitButtonText}
         </button>
       </form>
