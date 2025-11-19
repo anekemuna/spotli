@@ -4,6 +4,8 @@ import { useAuth } from "../context/AuthContext";
 import { supabase } from "../services/supabaseClient";
 import PostFormEdit from "../components/PostFormEdit";
 
+import "./EditPostPage.css";
+
 const EditPostPage = () => {
   const { id } = useParams();
   const { user } = useAuth();
@@ -55,7 +57,7 @@ const EditPostPage = () => {
 
   const handleEditSubmit = async (updatedData) => {
     const { title, content, image_url, video_url, flags } = updatedData;
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from("posts")
       .update({
         title,
@@ -65,11 +67,16 @@ const EditPostPage = () => {
         flags,
       })
       .eq("id", id)
-      .eq("author_id", user?.id);
+      .eq("author_id", user?.id)
+      .select();
     if (error) {
       setError("Failed to update post.");
     } else {
-      navigate("/my-posts");
+      if (data && data.length > 0 && data[0].id) {
+        navigate(`/post/${data[0].id}`);
+      } else {
+        navigate("/my-posts");
+      }
     }
   };
 
@@ -87,11 +94,6 @@ const EditPostPage = () => {
         className="delete-post-btn"
         onClick={handleDelete}
         disabled={deleting}
-        style={{
-          marginTop: "2rem",
-          background: "var(--color-secondary)",
-          color: "#fff",
-        }}
       >
         {deleting ? "Deleting..." : "Delete Post"}
       </button>

@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Post.css";
 
-
 const Post = ({ post, showEdit }) => {
   const navigate = useNavigate();
 
@@ -45,11 +44,7 @@ const Post = ({ post, showEdit }) => {
         <h3 className="post-title">{post.title}</h3>
         <span className="post-time">{formatDate(post.created_at)}</span>
         {showEdit && (
-          <button
-            className="edit-post-btn"
-            onClick={handleEdit}
-            style={{ marginLeft: "1rem", background: "var(--color-primary)", color: "#fff", border: "none", borderRadius: "6px", padding: "0.3rem 0.8rem", cursor: "pointer" }}
-          >
+          <button className="edit-post-btn" onClick={handleEdit}>
             Edit
           </button>
         )}

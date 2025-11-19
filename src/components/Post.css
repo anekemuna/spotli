@@ -62,3 +62,13 @@
   font-weight: 600;
   font-size: 0.95rem;
 }
+
+.edit-post-btn {
+  margin-left: 1rem;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+}

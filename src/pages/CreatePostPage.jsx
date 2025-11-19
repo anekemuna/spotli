@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { supabase } from "../services/supabaseClient";
 import PostForm from "../components/PostForm";
 
-import "./CreatePostPage.css"
+import "./CreatePostPage.css";
 
 const CreatePostPage = () => {
   const { user } = useAuth();
@@ -18,12 +18,17 @@ const CreatePostPage = () => {
     setError("");
 
     try {
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from("posts")
-        .insert([{ ...formData, author_id: user.id }]);
+        .insert([{ ...formData, author_id: user.id }])
+        .select();
 
       if (error) throw error;
-      navigate("/"); // TODO: I need to update to take to post detail page
+      if (data && data.length > 0 && data[0].id) {
+        navigate(`/post/${data[0].id}`);
+      } else {
+        navigate(`/`);
+      }
     } catch (err) {
       setError(err.message);
     } finally {

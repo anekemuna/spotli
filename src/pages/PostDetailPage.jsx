@@ -37,6 +37,16 @@ const PostDetailPage = () => {
   return (
     <div className="post-detail-wrapper">
       <div className="post-detail-page">
+        <button
+          className="back-btn"
+          onClick={() =>
+            window.history.length > 1
+              ? window.history.back()
+              : window.location.assign("/")
+          }
+        >
+          ← Back
+        </button>
         <h2 className="post-detail-title">{post.title}</h2>
         <div className="post-detail-meta">
           <span>Created: {new Date(post.created_at).toLocaleString()}</span>

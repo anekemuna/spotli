@@ -73,7 +73,7 @@ const MyPostsPage = () => {
         setSortBy={setSortBy}
       />
       <div className="posts-container">
-        <h2 style={{ marginBottom: "1.5rem" }}>My Posts</h2>
+        <h2>My Posts</h2>
         {loading && <p className="loading-message">Loading your posts...</p>}
         {error && <p className="error-message">{error}</p>}
         {!loading && !error && posts.length === 0 && (

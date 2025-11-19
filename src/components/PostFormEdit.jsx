@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "./PostForm.css";
 
@@ -15,6 +16,7 @@ const PostFormEdit = ({
   const [selectedFlags, setSelectedFlags] = useState(initialData.flags || []);
   const [flagError, setFlagError] = useState("");
 
+  const navigate = useNavigate();
   
   useEffect(() => {
     // TODO: FIx this and remove warnings
@@ -54,6 +56,14 @@ const PostFormEdit = ({
 
   return (
     <div className="post-form">
+      <button
+          className="back-btn"
+          onClick={() =>
+            navigate("/my-posts")
+          }
+        >
+          ← Back
+        </button>
       <form onSubmit={handleSubmit}>
         {/* Title */}
         <div className="form-group">

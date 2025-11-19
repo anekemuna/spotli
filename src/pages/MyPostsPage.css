@@ -20,7 +20,7 @@
 
 .my-posts-page .loading-message,
 .my-posts-page .error-message,
-.my-posts-page  .no-posts-message {
+.my-posts-page .no-posts-message {
   text-align: center;
   padding: 2rem;
   color: var(--color-text);
@@ -35,4 +35,8 @@
 
 .my-posts-page .no-posts-message {
   color: var(--color-muted);
+}
+
+.my-posts-page h2 {
+  margin-bottom: 1.5rem;
 }
