@@ -8,31 +8,57 @@ const HomePage = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [selectedFlag, setSelectedFlag] = useState("all");
+  const [sortBy, setSortBy] = useState("newest");
 
   useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      let query = supabase.from("posts").select("*").eq("is_deleted", false);
+
+      // Filter by flag
+      if (selectedFlag !== "all") {
+        query = query.contains("flags", [selectedFlag]);
+      }
+
+      // Search by title
+      if (searchInput.trim() !== "") {
+        query = query.ilike("title", `%${searchInput.trim()}%`);
+      }
+
+      // Sort
+      if (sortBy === "newest") {
+        query = query.order("created_at", { ascending: false });
+      } else if (sortBy === "oldest") {
+        query = query.order("created_at", { ascending: true });
+      } else if (sortBy === "popular") {
+        query = query.order("upvotes", { ascending: false });
+      }
+
+      try {
+        const { data, error } = await query;
+        if (error) throw error;
+        setPosts(data || []);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
     fetchPosts();
-  }, []);
-
-  const fetchPosts = async () => {
-    try {
-      const { data, error } = await supabase
-        .from("posts")
-        .select("*")
-        .eq("is_deleted", false)
-        .order("created_at", { ascending: false });
-
-      if (error) throw error;
-      setPosts(data || []);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [searchInput, selectedFlag, sortBy]);
 
   return (
     <div className="home-page">
-      <Navbar />
+      <Navbar
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        selectedFlag={selectedFlag}
+        setSelectedFlag={setSelectedFlag}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+      />
       <div className="posts-container">
         {loading && <p className="loading-message">Loading posts...</p>}
         {error && <p className="error-message">{error}</p>}

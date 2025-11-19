@@ -1,11 +1,13 @@
-import { useState } from "react";
 import "./Navbar.css";
 
-const Navbar = () => {
-  const [searchInput, setSearchInput] = useState("");
-  const [selectedFlag, setSelectedFlag] = useState("all");
-  const [sortBy, setSortBy] = useState("newest");
-
+const Navbar = ({
+  searchInput,
+  setSearchInput,
+  selectedFlag,
+  setSelectedFlag,
+  sortBy,
+  setSortBy,
+}) => {
   const handleClearButton = () => {
     setSearchInput("");
   };
