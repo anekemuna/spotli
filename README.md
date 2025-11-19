@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Find friends for your next hangout with Spotli. A social meet-up web app built with React + Vite that lets users discover local events, connect with people with similar interests, and share photos or updates from the events they attend**
 
-Time spent: **20** hours spent in total
+Time spent: **22** hours spent in total
 
 ## Required Features
 
@@ -69,14 +69,25 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+[![Walkthrough](https://img.youtube.com/vi/P9nKlVhHMss/0.jpg)](https://www.youtube.com/watch?v=P9nKlVhHMss)
+
+
+Walkthrough Link: [https://youtu.be/P9nKlVhHMss]
+
+Walkthrough created with:
+[Youtube](https://www.youtube.com/)
+<!-- 
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> -->
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+<!-- GIF created with ...   -->
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
+<!-- 
+https://youtu.be/P9nKlVhHMss -->
 
 ## Notes
 
