@@ -1,4 +1,4 @@
-# Web Development Final Project - *Name of App Here*
+# Web Development Final Project - *Spotli*
 
 Submitted by: **Munachimso Aneke**
 
