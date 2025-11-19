@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ViewMyPosts = () => {
+const MyPostsPage = () => {
   return (
     <div className='view-my-posts'>ViewMyPosts</div>
   )
 }
 
-export default ViewMyPosts
+export default MyPostsPage

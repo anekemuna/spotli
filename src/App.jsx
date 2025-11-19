@@ -12,7 +12,7 @@ import CreatePostPage from "./pages/CreatePostPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import PostDetailPage from "./pages/PostDetailPage";
-import ViewMyPosts from "./pages/ViewMyPosts";
+import MyPostsPage from "./pages/MyPostsPage";
 
 // Auth
 import { AuthProvider } from "./context/AuthContext";
@@ -41,7 +41,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/create" element={<CreatePostPage />} />
           <Route path="/post/:id" element={<PostDetailPage />} />
-          <Route path="/my-posts" element={<ViewMyPosts />} />
+          <Route path="/my-posts" element={<MyPostsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
