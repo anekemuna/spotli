@@ -11,9 +11,13 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreatePostPage from "./pages/CreatePostPage";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import PostDetailPage from "./pages/PostDetailPage";
+import ViewMyPosts from "./pages/ViewMyPosts";
+
+// Auth
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import PostDetailPage from "./pages/PostDetailPage";
+
 
 function App() {
   return (
@@ -37,6 +41,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/create" element={<CreatePostPage />} />
           <Route path="/post/:id" element={<PostDetailPage />} />
+          <Route path="/my-posts" element={<ViewMyPosts />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
