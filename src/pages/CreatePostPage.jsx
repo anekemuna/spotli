@@ -4,6 +4,8 @@ import { useAuth } from "../context/AuthContext";
 import { supabase } from "../services/supabaseClient";
 import PostForm from "../components/PostForm";
 
+import "./CreatePostPage.css"
+
 const CreatePostPage = () => {
   const { user } = useAuth();
   const navigate = useNavigate();

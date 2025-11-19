@@ -1,0 +1,20 @@
+.create-post-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.create-post-page h1 {
+  color: var(--color-text);
+  margin: 0 0 2rem 0;
+  font-size: 2.5rem;
+}
+
+.create-post-page .error {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
