@@ -38,7 +38,7 @@ The following **required** functionality is completed:
     - Each click increases the post's upvotes count by one
     - Users can upvote any post any number of times
 
-- [ ] **A post that a user previously created can be edited or deleted from its post pages**
+- [x] **A post that a user previously created can be edited or deleted from its post pages**
   - After a user creates a new post, they can go back and edit the post
   - A previously created post can be deleted from its post page
 
@@ -54,7 +54,7 @@ The following **optional** features are implemented:
   - On the post page of the new post, the referenced post is displayed and linked, creating a thread
 - [ ] Users can customize the interface
   - e.g., selecting the color scheme or showing the content and image of each post on the home feed
-- [ ] Users can add more characterics to their posts
+- [x] Users can add more characterics to their posts
   - Users can share and view web videos
   - Users can set flags such as "Question" or "Opinion" while creating a post
   - Users can filter posts by flags on the home feed
@@ -84,6 +84,7 @@ Describe any challenges encountered while building the app.
 - Initially starting was hard. Coming up with an idea, deciding a name, mapping out the user journey, and choosing colors.
 - The next challenge was deciding my database schema, including the columns to include, the foreign keys, and constraints.
 - I also struggled with RLS policy for my profiles table. I was trying setup my authentication process so that when a user signs up, a username and user id is added to the profiles table. I put the insert command in the sign up function, but that violated RLS policy. After several back and forths, I realzed I needed to make a trigger function on Supabase.
+- I tried making a PostForm component, so I can reuse it on both Create and Edit pages, but I had issues prepopulating it for edit (without affecting create), so I had to duplicate the component and rename it for edit.
 
 ## License
 
