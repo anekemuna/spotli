@@ -19,10 +19,14 @@ const LoginPage = () => {
     setLoading(true);
 
     try {
-      await signIn(email, password);
+      const { _data, error } = await signIn(email, password);
+      if (error) {
+        setError(error.message || "Invalid email or password.");
+        return;
+      }
       navigate("/");
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Login failed.");
     } finally {
       setLoading(false);
     }
@@ -59,7 +63,7 @@ const LoginPage = () => {
         </div>
       </form>
 
-      {error && <div className="error"><p>{error}</p></div>}
+      {error && <div className="error">{error}</div>}
 
       <div className="link-signup">
         Don't have an account? <Link to="/signup">Go to Sign Up</Link>

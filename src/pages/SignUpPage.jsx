@@ -20,7 +20,12 @@ const SignUpPage = () => {
     setLoading(true);
 
     try {
-      await signUp(username, email, password);
+      
+      const { _data, error } = await signUp(username, email, password);;
+      if (error) {
+        setError(error.message || "Invalid email or password.");
+        return;
+      }
       navigate("/"); // redirect to home after signup
     } catch (err) {
       setError(err.message);
@@ -76,7 +81,7 @@ const SignUpPage = () => {
         </div>
       </form>
 
-      {error && <div className="error"><p>{error}</p></div>}
+      {error && <div className="error">{error}</div>}
 
       <div className="link-login">
         Already have an account? <Link to="/login">Go to Login</Link>
