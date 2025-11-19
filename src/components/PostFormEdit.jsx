@@ -15,10 +15,10 @@ const PostFormEdit = ({
   const [selectedFlags, setSelectedFlags] = useState(initialData.flags || []);
   const [flagError, setFlagError] = useState("");
 
-  // TODO: FIx this and remove warnings
   
-// eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/set-state-in-effect
   useEffect(() => {
+    // TODO: FIx this and remove warnings
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setTitle(initialData.title || "");
     setContent(initialData.content || "");
     setImageUrl(initialData.image_url || "");
