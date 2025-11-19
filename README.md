@@ -16,7 +16,7 @@ The following **required** functionality is completed:
   - Forms should have the *option* for users to add: 
     - additional textual content
     - an image added as an external image URL
-- [ ] **Web app includes a home feed displaying previously created posts**
+- [x] **Web app includes a home feed displaying previously created posts**
   - Web app must include home feed displaying previously created posts
   - By default, each post on the posts feed should show only the post's:
     - creation time
@@ -83,7 +83,7 @@ GIF created with ...
 Describe any challenges encountered while building the app.
 - Initially starting was hard. Coming up with an idea, deciding a name, mapping out the user journey, and choosing colors.
 - The next challenge was deciding my database schema, including the columns to include, the foreign keys, and constraints.
-- I also struggled with RLS policy for my profiles table. I was trying setup my authentication process so that when a user signs up, a username and user id is added to the profiles table. I put the insert command in the sign up function, but that violated RLS policy. After several back and forths, I realzed I needed to make a trigger function on Supbase.
+- I also struggled with RLS policy for my profiles table. I was trying setup my authentication process so that when a user signs up, a username and user id is added to the profiles table. I put the insert command in the sign up function, but that violated RLS policy. After several back and forths, I realzed I needed to make a trigger function on Supabase.
 
 ## License
 
