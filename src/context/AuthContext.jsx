@@ -12,75 +12,51 @@ export const AuthProvider = ({ children }) => {
 
   // signUp function
   const signUp = async (username, email, password) => {
+    // const { data, error } = await supabase.auth.signUp({ email, password });
+
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
-          username: username,
+          username: username, // Store username in user metadata
         },
       },
     });
 
     if (error) throw error;
 
-    // Profile will be created automatically in the auth state listener
+    // // Create profile with username
+    // if (data.user) {
+    //   const { error: profileError } = await supabase
+    //     .from("profiles")
+    //     .insert([{ id: data.user.id, username }]);
+
+    //   if (profileError) throw profileError;
+    // }
+
     return data;
   };
 
   // signIn function
-  const signIn = async (email, password) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    if (error) throw error;
-    return data;
-  };
+  const signIn = (email, password) =>
+    supabase.auth.signInWithPassword({ email, password });
 
   // signOut function
   const signOut = () => supabase.auth.signOut();
 
-  // Helper function to create profile if it doesn't exist
-  const createProfileIfNeeded = async (user) => {
-    const { data: existingProfile } = await supabase
-      .from("profiles")
-      .select("id")
-      .eq("id", user.id)
-      .single();
-
-    if (!existingProfile) {
-      await supabase
-        .from("profiles")
-        .insert([{ id: user.id, username: user.user_metadata.username }]);
-    }
-  };
-
   // useEffect with auth state listener
   useEffect(() => {
     // Get session and set user
-    supabase.auth.getSession().then(async ({ data }) => {
-      const currentUser = data.session?.user || null;
-      setUser(currentUser);
-
-      // Create profile if user is authenticated and has username in metadata
-      if (currentUser && currentUser.user_metadata?.username) {
-        await createProfileIfNeeded(currentUser);
-      }
-
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user || null);
       setLoading(false);
     });
 
     // Listen for auth changes (signIn / signOut)
     const { data: listener } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        const currentUser = session?.user || null;
-        setUser(currentUser);
-
-        // Create profile if user is authenticated and has username in metadata
-        if (currentUser && currentUser.user_metadata?.username) {
-          await createProfileIfNeeded(currentUser);
-        }
+      (_event, session) => {
+        setUser(session?.user || null);
       }
     );
 
