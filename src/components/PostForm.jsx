@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./PostForm.css"
+
 const PostForm = ({
   initialData = {},
   onSubmit,

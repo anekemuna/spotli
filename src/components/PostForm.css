@@ -1,0 +1,106 @@
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--color-bg-elevated);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.post-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-form label {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.post-form input[type="text"],
+.post-form input[type="url"],
+.post-form textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.post-form input::placeholder,
+.post-form textarea::placeholder {
+  color: var(--color-muted);
+}
+
+.post-form input:focus,
+.post-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.post-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Flags checkboxes */
+.post-form .flags-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.post-form .flags-container label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.post-form .flags-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* Submit button */
+.post-form button[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+
+.post-form button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.post-form button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error display */
+.post-form .error {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+}
