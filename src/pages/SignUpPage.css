@@ -1,0 +1,100 @@
+.sign-up-page {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--color-bg-elevated);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sign-up-page h1 {
+  color: var(--color-text);
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.sign-up-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sign-up-page .form-group,
+.sign-up-page .username-container,
+.sign-up-page .email-container,
+.sign-up-page .password-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sign-up-page label {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.sign-up-page input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.sign-up-page input::placeholder {
+  color: var(--color-muted);
+}
+
+.sign-up-page input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.sign-up-page input[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+
+.sign-up-page input[type="submit"]:hover:not(:disabled) {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.sign-up-page input[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sign-up-page .error {
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.sign-up-page .link-login {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.sign-up-page .link-login a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.sign-up-page .link-login a:hover {
+  color: var(--color-accent);
+}

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
+import "./SignUpPage.css"
+
 const SignUpPage = () => {
   const { signUp } = useAuth();
 
@@ -74,7 +76,7 @@ const SignUpPage = () => {
         </div>
       </form>
 
-      <div className="error">{error && <p>{error}</p>}</div>
+      {error && <div className="error"><p>{error}</p></div>}
 
       <div className="link-login">
         Already have an account? <Link to="/login">Go to Login</Link>
