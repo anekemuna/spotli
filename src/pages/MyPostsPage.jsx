@@ -82,7 +82,7 @@ const MyPostsPage = () => {
         {!loading && !error && posts.length > 0 && (
           <div className="posts-feed">
             {posts.map((post) => (
-              <Post key={post.id} post={post} />
+              <Post key={post.id} post={post} showEdit />
             ))}
           </div>
         )}

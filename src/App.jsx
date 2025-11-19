@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import PostDetailPage from "./pages/PostDetailPage";
 import MyPostsPage from "./pages/MyPostsPage";
+import EditPostPage from "./pages/EditPostPage";
 
 // Auth
 import { AuthProvider } from "./context/AuthContext";
@@ -42,6 +43,7 @@ function App() {
           <Route path="/create" element={<CreatePostPage />} />
           <Route path="/post/:id" element={<PostDetailPage />} />
           <Route path="/my-posts" element={<MyPostsPage />} />
+          <Route path="/my-posts/edit/:id" element={<EditPostPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
