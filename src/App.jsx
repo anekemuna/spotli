@@ -13,6 +13,7 @@ import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PostDetailPage from "./pages/PostDetailPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         >
           <Route index element={<HomePage />} />
           <Route path="/create" element={<CreatePostPage />} />
+          <Route path="/post/:id" element={<PostDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
