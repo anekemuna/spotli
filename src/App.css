@@ -1,0 +1,86 @@
+body.theme-blue {
+  --color-primary: #2563eb; /* Blue */
+  --color-secondary: #ef4444; /* Red */
+  --color-dark: #e0e7ff; /* Light blue background */
+  --color-accent: #60a5fa; /* Light blue accent */
+  --color-light: #1e293b; /* Dark blue for text */
+  --color-bg: #f3f4f6; /* Light gray background */
+  --color-bg-sidebar: #e0e7ff; /* Light blue sidebar */
+  --color-bg-elevated: #ffffff; /* White for elevated elements */
+  --color-muted: #64748b; /* Muted blue-gray */
+  --color-text: #1e293b; /* Dark blue text */
+}
+
+body.theme-green {
+  --color-primary: #22c55e; /* Green */
+  --color-secondary: #ef4444; /* Red */
+  --color-dark: #d1fae5; /* Light green background */
+  --color-accent: #4ade80; /* Light green accent */
+  --color-light: #065f46; /* Dark green for text */
+  --color-bg: #f3f4f6; /* Light gray background */
+  --color-bg-sidebar: #d1fae5; /* Light green sidebar */
+  --color-bg-elevated: #ffffff; /* White for elevated elements */
+  --color-muted: #64748b; /* Muted gray */
+  --color-text: #065f46; /* Dark green text */
+}
+
+body.theme-pink {
+  --color-primary: #ec4899; /* Pink */
+  --color-secondary: #ef4444; /* Red */
+  --color-dark: #fce7f3; /* Light pink background */
+  --color-accent: #f472b6; /* Light pink accent */
+  --color-light: #831843; /* Dark pink for text */
+  --color-bg: #f3f4f6; /* Light gray background */
+  --color-bg-sidebar: #fce7f3; /* Light pink sidebar */
+  --color-bg-elevated: #ffffff; /* White for elevated elements */
+  --color-muted: #64748b; /* Muted gray */
+  --color-text: #831843; /* Dark pink text */
+}
+
+body.theme-purple {
+  --color-primary: #8b5cf6; /* Purple */
+  --color-secondary: #ef4444; /* Red */
+  --color-dark: #ede9fe; /* Light purple background */
+  --color-accent: #a78bfa; /* Light purple accent */
+  --color-light: #312e81; /* Dark purple for text */
+  --color-bg: #f3f4f6; /* Light gray background */
+  --color-bg-sidebar: #ede9fe; /* Light purple sidebar */
+  --color-bg-elevated: #ffffff; /* White for elevated elements */
+  --color-muted: #64748b; /* Muted gray */
+  --color-text: #312e81; /* Dark purple text */
+}
+
+
+body.theme-light {
+     /* Light mode colors */
+    --color-primary: #f59e0b; /* Amber stays the same */
+    --color-secondary: #ef4444; /* Red stays the same */
+    --color-dark: #f9fafb; /* Light gray for backgrounds */
+    --color-accent: #d97706; /* Darker amber for contrast */
+    --color-light: #1f2937; /* Dark gray for text */
+    --color-bg: #f3f4f6; /* Light gray background */
+    --color-bg-sidebar: #f9fafb; /* Slightly darker for sidebar */
+    --color-bg-elevated: #ffffff; /* White for elevated elements */
+    --color-muted: rgba(31, 41, 55, 0.5); /* Muted dark */
+    --color-text: #1f2937; /* Dark text */
+
+    color: #1f2937;
+    background-color: #f3f4f6;
+}
+
+
+body.theme-dark {
+
+  /* Dark mode colors (default) */
+  --color-primary: #f59e0b; /* Amber - primary accent */
+  --color-secondary: #ef4444; /* Red - secondary accent */
+  --color-dark: #1f2937; /* Gray - dark elements */
+  --color-accent: #fbbf24; /* Light amber - highlights */
+  --color-light: #f9fafb; /* Off-white - light elements */
+  --color-bg: #111827; /* Dark gray - main background */
+  --color-bg-sidebar: #1f2937; /* Slightly lighter for sidebar */
+  --color-bg-elevated: #1f2937; /* Elevated elements (navbar, cards) */
+  --color-muted: rgba(249, 250, 251, 0.6); /* Muted white */
+  --color-text: var(--color-light); /* Main text color */
+}
+
