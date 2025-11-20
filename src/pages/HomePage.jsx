@@ -15,7 +15,12 @@ const HomePage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      let query = supabase.from("posts").select("*").eq("is_deleted", false);
+      let query = supabase
+        .from("posts")
+        .select(`*,profiles:author_id (username)`)
+        .eq("is_deleted", false);
+
+      //let query1 = supabase.from("posts").select("*").eq("is_deleted", false);
 
       // Filter by flag
       if (selectedFlag !== "all") {

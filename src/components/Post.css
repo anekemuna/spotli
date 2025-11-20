@@ -72,3 +72,8 @@
   padding: 0.3rem 0.8rem;
   cursor: pointer;
 }
+
+.post-username {
+  color: var(--color-accent);
+  font-weight: 500;
+}
