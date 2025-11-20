@@ -67,7 +67,7 @@ const PostDetailPage = () => {
           className="post-detail-meta"
           
         >
-          <div>
+          <div className="username-date-container">
             <span className="post-username">
               @{post.profiles.username}
             </span>

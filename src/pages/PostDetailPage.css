@@ -105,6 +105,12 @@
 }
 
 .post-username {
- color: var(--color-accent);
+  color: var(--color-accent);
   font-weight: 600;
+}
+
+.username-date-container {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
