@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Find friends for your next hangout with Spotli. A social meet-up web app built with React + Vite that lets users discover local events, connect with people with similar interests, and share photos or updates from the events they attend**
 
-Time spent: **27** hours spent in total
+Time spent: **29** hours spent in total
 
 ## Required Features
 
@@ -52,14 +52,14 @@ The following **optional** features are implemented:
 - [ ] Users can repost a previous post by referencing its post ID. On the post page of the new post
   - Users can repost a previous post by referencing its post ID
   - On the post page of the new post, the referenced post is displayed and linked, creating a thread
-- [ ] Users can customize the interface
+- [x] Users can customize the interface
   - e.g., selecting the color scheme or showing the content and image of each post on the home feed
 - [x] Users can add more characterics to their posts
   - Users can share and view web videos
   - Users can set flags such as "Question" or "Opinion" while creating a post
   - Users can filter posts by flags on the home feed
   - Users can upload images directly from their local machine as an image file
-- [ ] Web app displays a loading animation whenever data is being fetched
+- [x] Web app displays a loading animation whenever data is being fetched
 
 The following **additional** features are implemented:
 
