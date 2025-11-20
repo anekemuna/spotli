@@ -1,3 +1,53 @@
+.sidebar-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar-avatar-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--color-bg);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.sidebar-avatar-circle:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-avatar-emoji {
+  font-size: 2rem;
+}
+
+.sidebar-avatar-username {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.sidebar-avatar:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-avatar-emoji {
+  font-size: 1.7rem;
+}
+
+.sidebar-avatar-username {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
