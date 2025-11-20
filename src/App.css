@@ -9,6 +9,8 @@ body.theme-blue {
   --color-bg-elevated: #ffffff; /* White for elevated elements */
   --color-muted: #64748b; /* Muted blue-gray */
   --color-text: #1e293b; /* Dark blue text */
+
+  --color-primary-transparent: rgba(37, 99, 235, 0.15);
 }
 
 body.theme-green {
@@ -22,6 +24,8 @@ body.theme-green {
   --color-bg-elevated: #ffffff; /* White for elevated elements */
   --color-muted: #64748b; /* Muted gray */
   --color-text: #065f46; /* Dark green text */
+
+  --color-primary-transparent: rgba(34, 197, 94, 0.15);
 }
 
 body.theme-pink {
@@ -35,6 +39,8 @@ body.theme-pink {
   --color-bg-elevated: #ffffff; /* White for elevated elements */
   --color-muted: #64748b; /* Muted gray */
   --color-text: #831843; /* Dark pink text */
+
+  --color-primary-transparent: rgba(236, 72, 153, 0.15);
 }
 
 body.theme-purple {
@@ -48,29 +54,27 @@ body.theme-purple {
   --color-bg-elevated: #ffffff; /* White for elevated elements */
   --color-muted: #64748b; /* Muted gray */
   --color-text: #312e81; /* Dark purple text */
-}
 
+  --color-primary-transparent: rgba(139, 92, 246, 0.15);
+}
 
 body.theme-light {
-     /* Light mode colors */
-    --color-primary: #f59e0b; /* Amber stays the same */
-    --color-secondary: #ef4444; /* Red stays the same */
-    --color-dark: #f9fafb; /* Light gray for backgrounds */
-    --color-accent: #d97706; /* Darker amber for contrast */
-    --color-light: #1f2937; /* Dark gray for text */
-    --color-bg: #f3f4f6; /* Light gray background */
-    --color-bg-sidebar: #f9fafb; /* Slightly darker for sidebar */
-    --color-bg-elevated: #ffffff; /* White for elevated elements */
-    --color-muted: rgba(31, 41, 55, 0.5); /* Muted dark */
-    --color-text: #1f2937; /* Dark text */
+  /* Light mode colors */
+  --color-primary: #f59e0b; /* Amber stays the same */
+  --color-secondary: #ef4444; /* Red stays the same */
+  --color-dark: #f9fafb; /* Light gray for backgrounds */
+  --color-accent: #d97706; /* Darker amber for contrast */
+  --color-light: #1f2937; /* Dark gray for text */
+  --color-bg: #f3f4f6; /* Light gray background */
+  --color-bg-sidebar: #f9fafb; /* Slightly darker for sidebar */
+  --color-bg-elevated: #ffffff; /* White for elevated elements */
+  --color-muted: rgba(31, 41, 55, 0.5); /* Muted dark */
+  --color-text: #1f2937; /* Dark text */
 
-    color: #1f2937;
-    background-color: #f3f4f6;
+  --color-primary-transparent: rgba(245, 158, 11, 0.15);
 }
 
-
 body.theme-dark {
-
   /* Dark mode colors (default) */
   --color-primary: #f59e0b; /* Amber - primary accent */
   --color-secondary: #ef4444; /* Red - secondary accent */
@@ -82,5 +86,6 @@ body.theme-dark {
   --color-bg-elevated: #1f2937; /* Elevated elements (navbar, cards) */
   --color-muted: rgba(249, 250, 251, 0.6); /* Muted white */
   --color-text: var(--color-light); /* Main text color */
-}
 
+  --color-primary-transparent: rgba(245, 158, 11, 0.15);
+}
