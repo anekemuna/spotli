@@ -21,8 +21,23 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import SettingPage from "./pages/SettingPage";
 
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const theme = localStorage.getItem("theme") || "dark";
+    const themeClasses = [
+      "theme-light",
+      "theme-dark",
+      "theme-blue",
+      "theme-green",
+      "theme-pink",
+      "theme-purple",
+    ];
+    document.body.classList.remove(...themeClasses);
+    document.body.classList.add(`theme-${theme}`);
+  }, []);
+
   return (
     <AuthProvider>
       <Routes>
