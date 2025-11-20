@@ -98,7 +98,7 @@
 }
 
 .nav-link:hover li {
-  background: rgba(245, 158, 11, 0.1);
+  background: var(--color-primary-transparent);
 }
 
 .nav-link.active {
