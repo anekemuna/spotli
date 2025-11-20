@@ -4,6 +4,7 @@ import { supabase } from "../services/supabaseClient";
 import "./PostDetailPage.css";
 
 const PostDetailPage = () => {
+  const [upvoting, setUpvoting] = useState(false);
   const { id } = useParams();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,20 @@ const PostDetailPage = () => {
   if (error) return <div className="post-detail-error">{error}</div>;
   if (!post) return null;
 
+  const handleUpvote = async () => {
+    if (upvoting) return;
+    setUpvoting(true);
+    const { data, error } = await supabase
+      .from("posts")
+      .update({ upvotes: (post.upvotes || 0) + 1 })
+      .eq("id", post.id)
+      .select();
+    if (!error && data && data.length > 0) {
+      setPost({ ...post, upvotes: data[0].upvotes });
+    }
+    setUpvoting(false);
+  };
+
   return (
     <div className="post-detail-wrapper">
       <div className="post-detail-page">
@@ -51,7 +66,16 @@ const PostDetailPage = () => {
         <div className="post-detail-meta">
           <span>by: {`@${post.profiles.username}`}</span>
           <span>Created: {new Date(post.created_at).toLocaleString()}</span>
-          <span>Upvotes: {post.upvotes}</span>
+          <span>
+            Upvotes: {post.upvotes}
+            <button
+              className="upvote-btn"
+              onClick={handleUpvote}
+              disabled={upvoting}
+            >
+              ⬆ Upvote
+            </button>
+          </span>
           <span>
             Flags:
             {Array.isArray(post.flags) && post.flags.length > 0 ? (
