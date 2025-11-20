@@ -15,7 +15,7 @@ const PostDetailPage = () => {
       setError("");
       const { data, error } = await supabase
         .from("posts")
-        .select("*")
+        .select(`*,profiles:author_id (username)`)
         .eq("id", id)
         .eq("is_deleted", false)
         .single();
@@ -49,6 +49,7 @@ const PostDetailPage = () => {
         </button>
         <h2 className="post-detail-title">{post.title}</h2>
         <div className="post-detail-meta">
+          <span>by: {`@${post.profiles.username}`}</span>
           <span>Created: {new Date(post.created_at).toLocaleString()}</span>
           <span>Upvotes: {post.upvotes}</span>
           <span>
