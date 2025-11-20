@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { supabase } from "../services/supabaseClient";
+import { useAuth } from "../context/AuthContext";
+import Comment from "../components/Comment";
+import CommentForm from "../components/CommentForm";
+import "../components/Comment.css";
 import "./PostDetailPage.css";
 
 const PostDetailPage = () => {
@@ -9,6 +13,13 @@ const PostDetailPage = () => {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const { user } = useAuth();
+
+  // Comments state
+  const [comments, setComments] = useState([]);
+  const [commentsLoading, setCommentsLoading] = useState(true);
+  const [commentError, setCommentError] = useState("");
+  const [postingComment, setPostingComment] = useState(false);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -31,9 +42,31 @@ const PostDetailPage = () => {
     fetchPost();
   }, [id]);
 
-  if (loading) return <div className="post-detail-loading">Loading...</div>;
-  if (error) return <div className="post-detail-error">{error}</div>;
-  if (!post) return null;
+  useEffect(() => {
+    const fetchComments = async () => {
+      setCommentsLoading(true);
+      setCommentError("");
+      const { data, error } = await supabase
+        .from("comments")
+        .select("*,profiles:author_id (username)")
+        .eq("post_id", id)
+        .order("created_at", { ascending: true });
+      if (error) {
+        setCommentError("Could not fetch comments.");
+        setComments([]);
+      } else {
+        // Map username from profiles join
+        setComments(
+          data.map((c) => ({
+            ...c,
+            username: c.profiles?.username || "unknown",
+          }))
+        );
+      }
+      setCommentsLoading(false);
+    };
+    if (id) fetchComments();
+  }, [id]);
 
   const handleUpvote = async () => {
     if (upvoting) return;
@@ -49,6 +82,39 @@ const PostDetailPage = () => {
     setUpvoting(false);
   };
 
+  const handleAddComment = async (content) => {
+    if (!user) return;
+    setPostingComment(true);
+    setCommentError("");
+    const { error } = await supabase.from("comments").insert({
+      post_id: id,
+      author_id: user.id,
+      content,
+    });
+    if (error) {
+      setCommentError("Could not post comment.");
+    } else {
+      // Refresh comments
+      // TODO: Repeats the code in the useEffect. Should I make into a function?
+      const { data } = await supabase
+        .from("comments")
+        .select("*,profiles:author_id (username)")
+        .eq("post_id", id)
+        .order("created_at", { ascending: true });
+      setComments(
+        data.map((c) => ({
+          ...c,
+          username: c.profiles?.username || "unknown",
+        }))
+      );
+    }
+    setPostingComment(false);
+  };
+
+  if (loading) return <div className="post-detail-loading">Loading...</div>;
+  if (error) return <div className="post-detail-error">{error}</div>;
+  if (!post) return null;
+
   return (
     <div className="post-detail-wrapper">
       <div className="post-detail-page">
@@ -63,17 +129,10 @@ const PostDetailPage = () => {
           ← Back
         </button>
         <h2 className="post-detail-title">{post.title}</h2>
-        <div
-          className="post-detail-meta"
-          
-        >
+        <div className="post-detail-meta">
           <div className="username-date-container">
-            <span className="post-username">
-              @{post.profiles.username}
-            </span>
-            <span>
-              Created: {new Date(post.created_at).toLocaleString()}
-            </span>
+            <span className="post-username">@{post.profiles.username}</span>
+            <span>Created: {new Date(post.created_at).toLocaleString()}</span>
           </div>
           <div>
             <span>Upvotes: {post.upvotes}</span>
@@ -107,6 +166,25 @@ const PostDetailPage = () => {
         <div className="post-detail-content">
           <h4>Content:</h4>
           <p>{post.content}</p>
+        </div>
+        {/* Comments */}
+        <div className="comments-section">
+          <h3>Comments</h3>
+          {commentsLoading ? (
+            <div>Loading comments...</div>
+          ) : comments.length === 0 ? (
+            <div>No comments yet.</div>
+          ) : (
+            comments.map((comment) => (
+              <Comment key={comment.id} comment={comment} />
+            ))
+          )}
+          {commentError && <div className="comment-error">{commentError}</div>}
+          {user ? (
+            <CommentForm onSubmit={handleAddComment} loading={postingComment} />
+          ) : (
+            <div className="comment-login">Log in to add a comment.</div>
+          )}
         </div>
       </div>
     </div>
