@@ -18,6 +18,7 @@ import EditPostPage from "./pages/EditPostPage";
 // Auth
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/post/:id" element={<PostDetailPage />} />
           <Route path="/my-posts" element={<MyPostsPage />} />
           <Route path="/my-posts/edit/:id" element={<EditPostPage />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

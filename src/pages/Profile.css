@@ -1,0 +1,106 @@
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+.profile-page {
+  max-width: 400px;
+  width: 100%;
+  background: var(--color-bg-elevated);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: var(--color-text);
+}
+
+.profile-page h2 {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-label {
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.profile-username {
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-bg-sidebar);
+  padding: 0.3rem 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-form label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.profile-form input[type="text"] {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-muted);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.profile-form input[type="text"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.profile-form button {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.profile-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.profile-error {
+  color: var(--color-secondary);
+  background: rgba(239, 68, 68, 0.08);
+  border-radius: 6px;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.profile-success {
+  color: var(--color-primary);
+  background: rgba(245, 158, 11, 0.08);
+  border-radius: 6px;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  text-align: center;
+}
