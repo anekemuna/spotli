@@ -1,5 +1,9 @@
-.delete-post-btn {
+.edit-post-page .delete-post-btn {
   margin-top: 2rem;
   background: var(--color-secondary);
   color: var(--color-dark);
+}
+
+.edit-post-page h2 {
+  color: var(--color-primary);
 }

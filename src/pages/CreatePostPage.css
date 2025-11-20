@@ -4,8 +4,8 @@
   padding: 2rem;
 }
 
-.create-post-page h1 {
-  color: var(--color-text);
+.create-post-page h2 {
+  color: var(--color-primary);
   margin: 0 0 2rem 0;
   font-size: 2.5rem;
 }
