@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Find friends for your next hangout with Spotli. A social meet-up web app built with React + Vite that lets users discover local events, connect with people with similar interests, and share photos or updates from the events they attend**
 
-Time spent: **29** hours spent in total
+Time spent: **30** hours spent in total
 
 ## Required Features
 
