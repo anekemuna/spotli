@@ -4,7 +4,7 @@ Submitted by: **Munachimso Aneke**
 
 This web app: **Find friends for your next hangout with Spotli. A social meet-up web app built with React + Vite that lets users discover local events, connect with people with similar interests, and share photos or updates from the events they attend**
 
-Time spent: **25** hours spent in total
+Time spent: **27** hours spent in total
 
 ## Required Features
 
@@ -28,7 +28,7 @@ The following **required** functionality is completed:
     -  creation time
     -  upvotes count
   - Users can search for posts by title
-- [ ] **Users can interact with each post in different ways**
+- [x] **Users can interact with each post in different ways**
   - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
     - content
     - image
@@ -64,6 +64,8 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] Enabled RLS policies, and used Supabase Authentication Features.
+* [x] Made UI decision to disabled buttons style, unless required features are filled in.
+
 
 ## Video Walkthrough
 
