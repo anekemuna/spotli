@@ -72,10 +72,10 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 
-[![Walkthrough](https://img.youtube.com/vi/P9nKlVhHMss/0.jpg)](https://www.youtube.com/watch?v=P9nKlVhHMss)
+[![Walkthrough](https://img.youtube.com/vi/MIDvstcwdkE/0.jpg)](https://www.youtube.com/watch?v=MIDvstcwdkE)
 
 
-Walkthrough Link: [https://youtu.be/P9nKlVhHMss]
+Walkthrough Link: [https://youtu.be/MIDvstcwdkE]
 
 Walkthrough created with:
 [Youtube](https://www.youtube.com/)
@@ -90,6 +90,7 @@ Walkthrough created with:
 [peek](https://github.com/phw/peek) for Linux. -->
 <!-- 
 https://youtu.be/P9nKlVhHMss -->
+<!-- https://youtu.be/MIDvstcwdkE -->
 
 ## Notes
 
