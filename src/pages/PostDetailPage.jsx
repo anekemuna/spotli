@@ -4,6 +4,7 @@ import { supabase } from "../services/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 import Comment from "../components/Comment";
 import CommentForm from "../components/CommentForm";
+import LoadingSpinner from "../components/LoadingSpinner";
 import "../components/Comment.css";
 import "./PostDetailPage.css";
 
@@ -111,7 +112,7 @@ const PostDetailPage = () => {
     setPostingComment(false);
   };
 
-  if (loading) return <div className="post-detail-loading">Loading...</div>;
+  if (loading) return <LoadingSpinner text="Loading post..." />;
   if (error) return <div className="post-detail-error">{error}</div>;
   if (!post) return null;
 

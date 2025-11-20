@@ -3,6 +3,7 @@ import "./HomePage.css";
 import Navbar from "../components/Navbar";
 import Post from "../components/Post";
 import { supabase } from "../services/supabaseClient";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -65,7 +66,7 @@ const HomePage = () => {
         setSortBy={setSortBy}
       />
       <div className="posts-container">
-        {loading && <p className="loading-message">Loading posts...</p>}
+        {loading && <LoadingSpinner text="Loading posts..." />}
         {error && <p className="error-message">{error}</p>}
         {!loading && !error && posts.length === 0 && (
           <p className="no-posts-message">

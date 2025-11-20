@@ -5,6 +5,7 @@ import { supabase } from "../services/supabaseClient";
 import PostFormEdit from "../components/PostFormEdit";
 
 import "./EditPostPage.css";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const EditPostPage = () => {
   const { id } = useParams();
@@ -51,7 +52,7 @@ const EditPostPage = () => {
     }
   };
 
-  if (loading) return <div className="edit-post-loading">Loading...</div>;
+  if (loading) return <LoadingSpinner text="Loading post..." />;
   if (error) return <div className="edit-post-error">{error}</div>;
   if (!post) return null;
 

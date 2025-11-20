@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { supabase } from "../services/supabaseClient";
 import Post from "../components/Post";
 import Navbar from "../components/Navbar";
+import LoadingSpinner from "../components/LoadingSpinner";
 import "./MyPostsPage.css";
 
 const MyPostsPage = () => {
@@ -74,7 +75,7 @@ const MyPostsPage = () => {
       />
       <div className="posts-container">
         <h2>My Posts</h2>
-        {loading && <p className="loading-message">Loading your posts...</p>}
+        {loading && <LoadingSpinner text="Loading your posts..." />}
         {error && <p className="error-message">{error}</p>}
         {!loading && !error && posts.length === 0 && (
           <p className="no-posts-message">You haven't created any posts yet.</p>
