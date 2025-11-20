@@ -41,7 +41,7 @@ const Post = ({ post, showEdit }) => {
   return (
     <div className="post-card" onClick={handleClick}>
       <div className="post-header">
-        <div>
+        <div className="header-div">
           <h3 className="post-title">{post.title}</h3>
           {post.profiles && post.profiles.username && (
             <h5 className="post-username"><em>@{post.profiles.username}</em></h5>

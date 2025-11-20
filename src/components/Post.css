@@ -26,7 +26,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
-  flex: 1;
   line-height: 1.4;
 }
 
@@ -76,4 +75,8 @@
 .post-username {
   color: var(--color-accent);
   font-weight: 500;
+}
+
+.header-div {
+  flex: 1;
 }
