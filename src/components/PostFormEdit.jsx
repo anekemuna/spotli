@@ -67,7 +67,7 @@ const PostFormEdit = ({
       <form onSubmit={handleSubmit}>
         {/* Title */}
         <div className="form-group">
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Title (Required)</label>
           <input
             type="text"
             id="title"
@@ -115,7 +115,7 @@ const PostFormEdit = ({
         </div>
 
         <div className="form-group">
-          <label>Flags </label>
+          <label>Flags (Required) </label>
           <div className="flags-container">
             <label>
               <input
