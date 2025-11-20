@@ -17,8 +17,8 @@
 
 .post-detail-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 1rem;
   font-size: 0.95rem;
   color: var(--color-muted);
   margin-bottom: 1.5rem;
@@ -95,4 +95,16 @@
   padding: 0.3rem 1rem;
   font-weight: 600;
   cursor: pointer;
+}
+
+.flags-container {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.post-username {
+ color: var(--color-accent);
+  font-weight: 600;
 }

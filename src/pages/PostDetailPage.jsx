@@ -63,11 +63,20 @@ const PostDetailPage = () => {
           ← Back
         </button>
         <h2 className="post-detail-title">{post.title}</h2>
-        <div className="post-detail-meta">
-          <span>by: {`@${post.profiles.username}`}</span>
-          <span>Created: {new Date(post.created_at).toLocaleString()}</span>
-          <span>
-            Upvotes: {post.upvotes}
+        <div
+          className="post-detail-meta"
+          
+        >
+          <div>
+            <span className="post-username">
+              @{post.profiles.username}
+            </span>
+            <span>
+              Created: {new Date(post.created_at).toLocaleString()}
+            </span>
+          </div>
+          <div>
+            <span>Upvotes: {post.upvotes}</span>
             <button
               className="upvote-btn"
               onClick={handleUpvote}
@@ -75,9 +84,9 @@ const PostDetailPage = () => {
             >
               ⬆ Upvote
             </button>
-          </span>
-          <span>
-            Flags:
+          </div>
+          <div className="flags-container">
+            <span>Flags:</span>
             {Array.isArray(post.flags) && post.flags.length > 0 ? (
               post.flags.map((flag, idx) => (
                 <span key={idx} className="post-detail-flags">
@@ -87,7 +96,7 @@ const PostDetailPage = () => {
             ) : (
               <span className="post-detail-flags">None</span>
             )}
-          </span>
+          </div>
         </div>
         {(post.image_url || post.video_url) && (
           <div className="post-detail-media">
